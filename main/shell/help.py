@@ -1,7 +1,5 @@
 helpText = """\
-Nie uzywaj komend bez wymaganych argumentow!
-Pozniej naprawie :)
-Aczkolwiek argumenty moga byc nieprawidlowe - jest obsluga bledow.
+Komendy:
 ls - Listuje dir
 ls <sciezka> - Listuje sciezke
 cd <sciezka> - Przechodzi do sciezki

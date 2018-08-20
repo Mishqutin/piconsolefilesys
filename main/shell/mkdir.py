@@ -1,5 +1,8 @@
-path = userPath(' '.join(args))
-if fs.exists(path):
-    c.send("Object already exists!".encode())
+if reqparam(1):
+    path = userPath(' '.join(args))
+    if fs.exists(path):
+        c.send("Object already exists!".encode())
+    else:
+        fs.makedir(path)
 else:
-    fs.makedir(path)
+    c.send(b"Syntax error")
