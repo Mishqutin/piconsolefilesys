@@ -1,5 +1,6 @@
 import posixpath as osp
 
+SaveFsDisconnect = 1
 users = {}
 
 def onClientConnect(userdata):
@@ -19,6 +20,11 @@ def onClientDisconnect(userdata):
     f = open(CWD+"/users", 'w')
     f.write(str(users))
     f.close()
+    
+    if SaveFsDisconnect:
+        f = open(CWD+"/FILESYSTEM", 'w')
+        f.write(str(fs.filesystem))
+        f.close()
     
 
 server.onClientDisconnect = onClientDisconnect
