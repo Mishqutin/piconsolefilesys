@@ -1,0 +1,1 @@
+{'home': {'content': {'falder': {'content': {'jajko.txt': {'content': 'JajkoNetwork', 'type': 'file'}}, 'type': 'directory'}, 'wtf.txt': {'content': 'Lol xd', 'type': 'file'}}, 'type': 'directory'}, 'file.txt': {'content': 'Hello world!', 'type': 'file'}}

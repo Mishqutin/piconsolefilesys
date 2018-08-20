@@ -1,0 +1,44 @@
+import posixpath as osp
+
+users = {}
+
+def onClientConnect(userdata):
+    global users
+    f = open(CWD+"/users", 'r')
+    users = eval(f.read())
+    f.close()
+    
+    if not userdata["name"] in users:
+        users[userdata["name"]] = {"dir": "/"}
+    
+
+server.onClientConnect = onClientConnect
+
+def onClientDisconnect(userdata):
+    global users
+    f = open(CWD+"/users", 'w')
+    f.write(str(users))
+    f.close()
+    
+
+server.onClientDisconnect = onClientDisconnect
+
+def userPathShit(path):
+    if path[0]=="/":
+        return path
+    else:
+        return users[userdata["names"]]["dir"]+"/"+path
+
+def userPath(path):
+    userpath = users[userdata["name"]]["dir"]
+    if not len(path): return userpath
+    if path=="..":
+        x = osp.normpath(userpath + "/" + path)
+    elif path[0]=="/":
+        x = osp.normpath(path)
+    else:
+        if userpath=="/":
+            x = osp.normpath(userpath + path)
+        else:
+            x = osp.normpath(userpath + "/" + path)
+    return x
