@@ -10,7 +10,7 @@ if reqparam(1):
     elif fs.exists(x) and not fs.type(x)=="file":
         users[userdata["name"]]["dir"] = x
     else:
-        c.send("No such directory!".encode())
+        sendmsg("No such directory!")
 
 else:
-    c.send(b"Syntax error")
+    sendmsg("Syntax error")

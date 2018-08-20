@@ -1,4 +1,9 @@
 import posixpath as osp
+import html
+
+def txtToHtml(string):
+    x = html.escape(string).replace("\n", "<br>")
+    return x
 
 SaveFsDisconnect = 1
 users = {}
@@ -28,6 +33,15 @@ def onClientDisconnect(userdata):
     
 
 server.onClientDisconnect = onClientDisconnect
+
+
+def sendmsg(string, escHtml=1):
+    if escHtml:
+        c.send( txtToHtml(string).encode() )
+    else:
+        c.send( string.encode() )
+
+
 
 def userPathShit(path):
     if path[0]=="/":

@@ -1,9 +1,9 @@
 if reqparam(2):
     path = userPath(args[0])
     if fs.exists(path) and fs.type(path)=="directory":
-        c.send("That's a directory!".encode())
+        sendmsg("That's a directory!")
     else:
         code = ' '.join(args[1:])
         fs.writefile(path, code)
 else:
-    c.send(b"Syntax error")
+    sendmsg("Syntax error")

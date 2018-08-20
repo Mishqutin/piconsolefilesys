@@ -4,6 +4,6 @@ if reqparam(1):
     if fs.exists(path):
         fs.remove(path)
     else:
-        c.send(b"Object doesn't exist!")
+        sendmsg("Object doesn't exist!")
 else:
-    c.send(b"Synatax error")
+    sendmsg("Synatax error")

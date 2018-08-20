@@ -1,9 +1,9 @@
 if reqparam(1):
     path = userPath(' '.join(args))
     if not fs.exists(path) or fs.type(path)=="directory":
-        c.send("No such file!".encode())
+        sendmsg("No such file!")
     else:
         x = fs.readfile(path)
-        c.send(x.encode())
+        sendmsg(x, 0)
 else:
-    c.send(b"Syntax error")
+    sendmsg("Syntax error")

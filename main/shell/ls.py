@@ -10,4 +10,4 @@ else:
     x = str(fs.listdir(users[userdata["name"]]["dir"]))
 
 
-c.send(x.encode())
+sendmsg(x)

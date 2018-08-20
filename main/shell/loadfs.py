@@ -4,4 +4,4 @@ f.close()
 
 fs.filesystem = code
 
-c.send(b"File system loaded!")
+sendmsg("File system loaded!")

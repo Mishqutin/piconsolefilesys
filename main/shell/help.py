@@ -14,4 +14,4 @@ czyli /home
 """
 
 
-c.send(helpText.encode())
+sendmsg(helpText)
