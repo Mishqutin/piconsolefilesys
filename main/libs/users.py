@@ -36,10 +36,10 @@ server.onClientDisconnect = onClientDisconnect
 
 
 def sendmsg(string, escHtml=1):
-    if escHtml:
-        c.send( txtToHtml(string).encode() )
-    else:
-        c.send( string.encode() )
+    # if escHtml:
+        # c.send( txtToHtml(string).encode() )
+    # else:
+    c.send( string.encode() )
 
 
 
