@@ -1,10 +1,11 @@
 param = ' '.join(args)
 path = userPath(param)
-print(path)
+
 if len(args):
     if fs.exists(path) and fs.type(path)=="directory":
-        l = ""
+        l = "-:"+param+":-"
         for i in fs.listdir(path):
+            if param=="/": param=""
             if fs.type(userPath(param+"/"+i))=="directory":
                 l+="\n["+i+"]"
             else:
@@ -14,9 +15,10 @@ if len(args):
         x = "No such directory!"
 else:
     path = users[userdata["name"]]["dir"]
-    l = ""
+    l = "-:"+path+":-"
     for i in fs.listdir(path):
-        if fs.type(userPath(param+"/"+i))=="directory":
+        if path=="/": path = ""
+        if fs.type(userPath(path+"/"+i))=="directory":
             l+="\n["+i+"]"
         else:
             l+="\n"+i
