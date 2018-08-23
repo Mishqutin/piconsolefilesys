@@ -3,11 +3,24 @@ path = userPath(param)
 print(path)
 if len(args):
     if fs.exists(path) and fs.type(path)=="directory":
-        x = str(fs.listdir(path))
+        l = ""
+        for i in fs.listdir(path):
+            if fs.type(userPath(param+"/"+i))=="directory":
+                l+="\n["+i+"]"
+            else:
+                l+="\n"+i
+        x = l
     else:
         x = "No such directory!"
 else:
-    x = str(fs.listdir(users[userdata["name"]]["dir"]))
+    path = users[userdata["name"]]["dir"]
+    l = ""
+    for i in fs.listdir(path):
+        if fs.type(userPath(param+"/"+i))=="directory":
+            l+="\n["+i+"]"
+        else:
+            l+="\n"+i
+    x = l
 
 
 sendmsg(x)

@@ -1,1 +1,1 @@
-{'home': {'content': {'falder': {'content': {'jajko.txt': {'content': 'JajkoNetwork', 'type': 'file'}}, 'type': 'directory'}, 'wtf.txt': {'content': 'Lol xd', 'type': 'file'}}, 'type': 'directory'}, 'file.txt': {'content': 'Hello world!', 'type': 'file'}}
+{'home': {'content': {'falder': {'content': {'styled.txt': {'content': '<h1 style="background-color:#00ff00;"><b>JajkoNetwork</b></h1>', 'type': 'file'}}, 'type': 'directory'}, 'wtf.txt': {'content': 'Lol xd', 'type': 'file'}}, 'type': 'directory'}, 'file.txt': {'content': 'Hello world! Yaya lol xd :)', 'type': 'file'}}

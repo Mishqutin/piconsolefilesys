@@ -2,15 +2,13 @@
 DEBUG = 1
 
 
-filesystem = {
-    "file.txt": {"type": "file", "content": "Hello world!"},
-    "home": {"type": "directory", "content": {
-        "wtf.txt": {"type": "file", "content": "Lol xd"},
-        "falder": {"type": "directory", "content":{
-            "styled.txt": {"type": "file", "content": '<h1 style="background-color:#00ff00;"><b>JajkoNetwork</b></h1>'}
-        }}
-    }}
-}
+
+f = open(CWD+"/FILESYSTEM", 'r')
+code = eval(f.read())
+f.close()
+
+filesystem = code
+
 
 class filesys:
     def __init__(self, sys={}):
