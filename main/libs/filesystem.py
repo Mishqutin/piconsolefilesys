@@ -52,6 +52,9 @@ class filesys:
     def writefile(self, path, content):
         exec( filesys.pathobj(path)+" = {'type': 'file', 'content': content }", locals() )
     
+    def writefilebytes(self, path, content):
+        exec( filesys.pathobj(path)+" = {'type': 'bytefile', 'content': content }", locals() )
+    
     def remove(self, path):
         exec( "del "+filesys.pathobj(path), locals() )
     
